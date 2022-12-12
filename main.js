@@ -1,5 +1,5 @@
 const canvas = document.getElementById('board')
-const ctx = canvas.getContext('2d')
+const ctx = canvas.getContext('2d') //2D Animation
 const canvasNext = document.getElementById('next')
 const ctxNext = canvasNext.getContext('2d')
 
@@ -39,8 +39,8 @@ addEventListener()
 initNext()
 
 function initNext() {
-    ctxNext.canvas.width = 4 * BLOCK_SIZE
-    ctxNext.canvas.height = 4 * BLOCK_SIZE
+    ctxNext.canvas.width = 3 * BLOCK_SIZE
+    ctxNext.canvas.height = 3 * BLOCK_SIZE
     ctxNext.scale(BLOCK_SIZE,BLOCK_SIZE)
 }
 

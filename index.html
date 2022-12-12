@@ -9,22 +9,39 @@
     rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Tetris_DEMO</title>
+    <title>Tetris Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/5f6efef2dd.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="grid">
-        <canvas id="board" class="game-board"></canvas>
-        <div class="right-column">
-          <div>
-            <h1>TETRIS</h1>
-            <p>Score: <span id="score">0</span></p>
-            <p>Lines: <span id="lines">0</span></p>
-            <p>Level: <span id="level">0</span></p>
-            <canvas id="next" class="next"></canvas>
-          </div>
-          <button onclick="play()" class="play-button">Play</button>
+<body class="bg-[url('/minimalism-ants-tetris-wallpaper-preview.jpg')] bg-cover">
+  <div class="flex align-center justify-center bg-gray-500 border-gray-600 border-2 ">
+  <i class="fa-solid fa-game-console-handheld fa-2xl inline-flex items-center px-2 text-gray-100"></i>
+  <h1 class="text-4xl font-bold tracking-wide text-gray-50 py-6 text-center px-2">TETRIS</h1>
+  <i class="fa-solid fa-joystick fa-2xl inline-flex items-center px-2 text-gray-100"></i>
+</div>
+  <div class="grid grid-cols-4 grid-gap-2 pt-8">
+    <div></div>
+    <div>
+
+      <canvas id="board" class="border-solid border-gray-600 border-4 bg-white"></canvas>
+
+    </div>
+    <div class="border-solid">
+      <div class="bg-gray-50 border-1 border-gray-600">
+        <h1 class="bg-gray-300 border-gray-600 border-1 text-2xl font-semibold tracking-wide py-2 pl-2">Current Game Stats:</h1>
+        <p class="ml-2 text-lg tracking-wide py-2 font-semibold">Score: <span id="score">0</span></p>
+        <p class="ml-2 text-lg tracking-wide py-2 font-semibold">Lines: <span id="lines">0</span></p>
+        <p class="ml-2 text-lg tracking-wide py-2 font-semibold">Level: <span id="level">0</span></p>
+        <div class="flex justify-center py-4">
+          <canvas id="next" class="next border-solid border-2 border-yellow-500"></canvas>
         </div>
       </div>
+      <div class="flex justify-center">
+        <button onclick="play()" class="rounded-lg bg-yellow-500 hover:bg-yellow-200 text-xl font-semibold px-10 py-5 mt-5">Play</button>
+      </div>
+    </div>
+    <div></div>
+  </div>
       <script type="text/javascript" src="constants.js"></script>
       <script type="text/javascript" src="board.js"></script>
       <script type="text/javascript" src="piece.js"></script>
