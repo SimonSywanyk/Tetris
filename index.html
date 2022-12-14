@@ -4,40 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link 
-    href="https://fonts.googleapis.com/css?family=Press+Start+2P" 
-    rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Tetris Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/5f6efef2dd.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-[url('/minimalism-ants-tetris-wallpaper-preview.jpg')] bg-cover">
-  <div class="flex align-center justify-center bg-gray-500 border-gray-600 border-2 ">
-  <i class="fa-solid fa-game-console-handheld fa-2xl inline-flex items-center px-2 text-gray-100"></i>
-  <h1 class="text-4xl font-bold tracking-wide text-gray-50 py-6 text-center px-2">TETRIS</h1>
-  <i class="fa-solid fa-joystick fa-2xl inline-flex items-center px-2 text-gray-100"></i>
+<body class="bg-[url('/images/tetris-308986.png')] bg-cover font-mono">
+  <div class="flex align-center justify-center bg-gray-900 bg-opacity-70 border-gray-600 border-2 ">
+  <i class="fa-solid fa-game-console-handheld fa-3x inline-flex items-center px-2 text-yellow-200"></i>
+  <h1 class="text-5xl font-bold tracking-wide text-yellow-400 py-6 text-center px-2">TETRIS</h1>
+  <i class="fa-solid fa-joystick fa-3x inline-flex items-center px-2 text-yellow-200"></i>
 </div>
   <div class="grid grid-cols-4 grid-gap-2 pt-8">
     <div></div>
     <div>
-
-      <canvas id="board" class="border-solid border-gray-600 border-4 bg-white"></canvas>
-
+      <canvas id="board" class="border-solid border-gray-600 bg-gray-900"></canvas>
     </div>
-    <div class="border-solid">
-      <div class="bg-gray-50 border-1 border-gray-600">
-        <h1 class="bg-gray-300 border-gray-600 border-1 text-2xl font-semibold tracking-wide py-2 pl-2">Current Game Stats:</h1>
-        <p class="ml-2 text-lg tracking-wide py-2 font-semibold">Score: <span id="score">0</span></p>
-        <p class="ml-2 text-lg tracking-wide py-2 font-semibold">Lines: <span id="lines">0</span></p>
-        <p class="ml-2 text-lg tracking-wide py-2 font-semibold">Level: <span id="level">0</span></p>
-        <div class="flex justify-center py-4">
-          <canvas id="next" class="next border-solid border-2 border-yellow-500"></canvas>
+    <div class="">
+      <div class="flex flex-wrap bg-gray-100 bg-opacity-80 border-1 border-gray-600 rounded-br rounded-bl">
+        <h1 class="bg-gray-300 border-gray-600 bg-opacity-80 text-2xl font-semibold tracking-wider text-center py-2 pl-2 rounded-tr rounded-tl">Current Game Stats:</h1>
+        <div class="justify-center align-center py-4 px-4">
+          <p class="py-2 font-semibold text-lg">Next Object:</p>
+          <canvas id="next" class="next border-solid border-2 border-yellow-500 bg-white"></canvas>
+        </div>
+        <div class="pt-6 pl-8">        
+          <p class="text-2xl tracking-wider py-1 font-bold text-center">Score: <span id="score">0</span></p>
+          <p class="text-2xl tracking-wider py-1 font-bold text-center">Lines: <span id="lines">0</span></p>
+          <p class="text-2xl tracking-wider py-1 font-bold text-center">Level: <span id="level">0</span></p>
         </div>
       </div>
+      <div class="px-4">
+        <p class="font-semibold text-xl">Game Commands:</p>
+        <ul class="text-lg">
+          <li><span class="font-semibold">Arrow Keys:</span> Move left/rigth</li>
+          <li><span class="font-semibold">Space Bar:</span> Drop piece</li>
+          <li><span class="font-semibold">Esc:</span> Quit Game</li>
+          <li><span class="font-semibold">P:</span> Pause</li>
+        </ul>
+      </div>
       <div class="flex justify-center">
-        <button onclick="play()" class="rounded-lg bg-yellow-500 hover:bg-yellow-200 text-xl font-semibold px-10 py-5 mt-5">Play</button>
+        <button onclick="play()" class="border-solid border-2 border-gray-600 rounded-lg w-full bg-yellow-400 hover:bg-yellow-600 text-xl font-semibold px-10 py-5 mt-5">Play</button>
       </div>
     </div>
     <div></div>
