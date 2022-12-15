@@ -8,43 +8,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/5f6efef2dd.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="bg-[url('/images/tetris-308986.png')] bg-cover font-mono">
-  <div class="flex align-center justify-center bg-gray-900 bg-opacity-70 border-gray-600 border-2 ">
+<!-- HEADER -->
+<div class="flex align-center justify-center bg-gray-900 bg-opacity-70 border-gray-600 border-2 ">
   <i class="fa-solid fa-game-console-handheld fa-3x inline-flex items-center px-2 text-yellow-200"></i>
   <h1 class="text-5xl font-bold tracking-wide text-yellow-400 py-6 text-center px-2">TETRIS</h1>
   <i class="fa-solid fa-joystick fa-3x inline-flex items-center px-2 text-yellow-200"></i>
 </div>
-  <div class="grid grid-cols-4 grid-gap-1 pt-8">
-      <div class="px-4">
-          <p class="font-semibold text-xl bg-gray-300 bg-opacity-80">Game Commands:</p>
-          <ul class="text-lg bg-gray-100 bg-opacity-80">
-            <li><span class="font-semibold">Arrow Keys:</span> Move left/rigth</li>
-            <li><span class="font-semibold">Space Bar:</span> Drop piece</li>
-            <li><span class="font-semibold">Esc:</span> Quit Game</li>
-            <li><span class="font-semibold">P:</span> Pause</li>
-          </ul>
-      </div>
-      <div>
-          <canvas id="board" class="border-solid border-gray-600 bg-gray-900"></canvas>
-      </div>
-      <div class="">
-          <div class="flex flex-wrap bg-gray-100 bg-opacity-80 border-1 border-gray-600 rounded-br rounded-bl">
-            <h1 class="bg-gray-300 border-gray-600 bg-opacity-80 text-2xl font-semibold tracking-wider text-center py-2 pl-2 rounded-tr rounded-tl">Current Game Stats:</h1>
-            <div class="justify-center align-center py-4 px-4">
-              <p class="py-2 font-semibold text-lg">Next Object:</p>
-              <canvas id="next" class="next border-solid border-2 border-yellow-500 bg-white"></canvas>
-            </div>
-            <div class="pt-6 pl-8">        
-              <p class="text-2xl tracking-wider py-1 font-bold text-center">Score: <span id="score">0</span></p>
-              <p class="text-2xl tracking-wider py-1 font-bold text-center">Lines: <span id="lines">0</span></p>
-              <p class="text-2xl tracking-wider py-1 font-bold text-center">Level: <span id="level">0</span></p>
-            </div>
-          </div>
-          <div class="flex justify-center">
-            <button onclick="play()" class="border-solid border-2 border-gray-600 rounded-lg w-full bg-yellow-400 hover:bg-yellow-600 text-xl font-semibold px-10 py-5 mt-5">Play</button>
-          </div>
-      </div>
+
+<!-- BODY -->
+
+<div class="flex flex-wrap pt-8 justify-center">
+  <div class="bg-gray-100 bg-opacity-90">
+    <!-- Next Piece -->
+    <h1 class="bg-gray-300 border-gray-600 bg-opacity-90 text-2xl font-semibold tracking-wider py-2 pl-2 text-center text-red-500">Next Piece:</h1>
+    <p class="py-2 font-semibold text-xl text-center"></p>
+    <div class="flex justify-center align-center pb-4">
+      <canvas id="next" class="next border-solid border-2 border-yellow-500 bg-black"></canvas>
+    </div>
+
+    <!-- Game Stats -->
+    <div class="bg-gray-100 bg-opacity-90">
+      <h1 class="bg-gray-300 border-gray-600 bg-opacity-90 text-2xl font-semibold tracking-wider py-2 pl-2">Current Game Stats</h1>
+      <ul class="">
+        <li class="text-2xl tracking-wider py-1 font-bold text-center text-gray-600">Score: <span id="score">0</span></li>
+        <li class="text-2xl tracking-wider py-1 font-bold text-center text-gray-600">Lines: <span id="lines">0</span></li>
+        <li class="text-2xl tracking-wider py-1 font-bold text-center text-gray-600">Level: <span id="level">0</span></li>
+      </ul>
+    </div>
+    <p class="bg-gray-300 border-gray-600 bg-opacity-90 text-2xl font-semibold tracking-wider py-2 pl-2">Game Commands</p>
+    <ul class="text-lg bg-gray-100 bg-opacity-90 py-4">
+     <li><span class="font-semibold">Arrow Keys:</span> Move Left/Right</li>
+       <li><span class="font-semibold">Space Bar:</span> Drop Piece</li>
+       <li><span class="font-semibold">Esc:</span> Quit Game</li>
+       <li><span class="font-semibold">P:</span> Pause</li>
+    </ul>
+
+    <!-- "Play" Button" -->
+      <button onclick="play()" class="border-solid border-2 border-gray-600 rounded-lg w-full bg-yellow-400 hover:bg-yellow-600 text-xl font-semibold px-10 py-5 mt-5">Play</button>
+
+    </div>
+    <!-- Game Board -->
+    <div class="pl-8">
+      <canvas id="board" class="border-solid border-gray-600 bg-gray-900"></canvas>
+    </div>
   </div>
+</div>
       <script type="text/javascript" src="constants.js"></script>
       <script type="text/javascript" src="board.js"></script>
       <script type="text/javascript" src="piece.js"></script>
