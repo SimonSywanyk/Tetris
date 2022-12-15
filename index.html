@@ -9,7 +9,9 @@
     <script src="https://kit.fontawesome.com/5f6efef2dd.js" crossorigin="anonymous"></script>
 </head>
 
+<!-- Background Image-->
 <body class="bg-[url('/images/tetris-308986.png')] bg-cover font-mono">
+
 <!-- HEADER -->
 <div class="flex align-center justify-center bg-gray-900 bg-opacity-70 border-gray-600 border-2 ">
   <i class="fa-solid fa-game-console-handheld fa-3x inline-flex items-center px-2 text-yellow-200"></i>
@@ -18,44 +20,49 @@
 </div>
 
 <!-- BODY -->
-
-<div class="flex flex-wrap pt-8 justify-center">
+<div class="flex flex-nowrap pt-8 justify-center">
   <div class="bg-gray-100 bg-opacity-90">
+
     <!-- Next Piece -->
-    <h1 class="bg-gray-300 border-gray-600 bg-opacity-90 text-2xl font-semibold tracking-wider py-2 pl-2 text-center text-red-500">Next Piece:</h1>
-    <p class="py-2 font-semibold text-xl text-center"></p>
-    <div class="flex justify-center align-center pb-4">
-      <canvas id="next" class="next border-solid border-2 border-yellow-500 bg-black"></canvas>
+    <h1 class="bg-gray-300 border-gray-600 bg-opacity-90 text-2xl font-semibold tracking-wider pl-2 text-center text-black">Next Piece:</h1>
+    <div class="flex justify-center align-center pt-4">
+      <canvas id="next" class="next border-solid border-2 border-yellow-500 bg-gray-800"></canvas>
+    </div>
+
+    <!-- "Play" Button" -->
+    <div class="flex justify-center align-center">
+    <button onclick="play()" class="border-solid border-2 border-gray-600 rounded-lg w-2/3 bg-yellow-400 hover:bg-yellow-600 text-xl font-semibold px-10 py-3 my-3">Play</button>
     </div>
 
     <!-- Game Stats -->
     <div class="bg-gray-100 bg-opacity-90">
-      <h1 class="bg-gray-300 border-gray-600 bg-opacity-90 text-2xl font-semibold tracking-wider py-2 pl-2">Current Game Stats</h1>
+      <h1 class="bg-gray-300 border-gray-600 bg-opacity-90 text-2xl font-semibold tracking-wider py-2 pl-2 text-center">Current Game Stats</h1>
       <ul class="">
         <li class="text-2xl tracking-wider py-1 font-bold text-center text-gray-600">Score: <span id="score">0</span></li>
         <li class="text-2xl tracking-wider py-1 font-bold text-center text-gray-600">Lines: <span id="lines">0</span></li>
         <li class="text-2xl tracking-wider py-1 font-bold text-center text-gray-600">Level: <span id="level">0</span></li>
       </ul>
     </div>
-    <p class="bg-gray-300 border-gray-600 bg-opacity-90 text-2xl font-semibold tracking-wider py-2 pl-2">Game Commands</p>
-    <ul class="text-lg bg-gray-100 bg-opacity-90 py-4">
-      <li><span class="font-semibold">Up Arrow:</span> Spin Piece</li>
-      <li><span class="font-semibold">Left/Right Arrows:</span> Move Piece</li>
-      <li><span class="font-semibold">Space Bar:</span> Drop Piece</li>
-      <li><span class="font-semibold">Esc:</span> Quit Game</li>
-      <li><span class="font-semibold">P:</span> Pause</li>
-    </ul>
 
-    <!-- "Play" Button" -->
-      <button onclick="play()" class="border-solid border-2 border-gray-600 rounded-lg w-full bg-yellow-400 hover:bg-yellow-600 text-xl font-semibold px-10 py-5 mt-5">Play</button>
-
+      <!-- Game Commands -->
+      <p class="bg-gray-300 border-gray-600 bg-opacity-90 text-2xl font-semibold tracking-wider py-2 pl-2 text-center">Game Commands</p>
+      <ul class="text-lg bg-gray-100 bg-opacity-90 py-2 mx-2">
+        <li><span class="font-semibold">Up Arrow:</span> Spin Piece</li>
+        <li><span class="font-semibold">Left/Right Arrows:</span> Move Piece</li>
+        <li><span class="font-semibold">Space Bar:</span> Drop Piece</li>
+        <li><span class="font-semibold">Esc:</span> Quit Game</li>
+        <li><span class="font-semibold">P:</span> Pause</li>
+      </ul>
     </div>
+
     <!-- Game Board -->
     <div class="pl-8">
-      <canvas id="board" class="border-solid border-gray-600 bg-gray-900"></canvas>
+      <canvas id="board" class="border-solid border-gray-600 bg-gray-800"></canvas>
     </div>
   </div>
 </div>
+
+<!-- Scripts -->
       <script type="text/javascript" src="constants.js"></script>
       <script type="text/javascript" src="board.js"></script>
       <script type="text/javascript" src="piece.js"></script>
